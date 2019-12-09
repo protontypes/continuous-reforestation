@@ -1,0 +1,16 @@
+name: Integration Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Self test
+        id: selftest
+
+        # Put your action repo here
+        uses: jacobtomlinson/python-container-action@master
+
+      - name: Check outputs
+        run: |
+          test "${{ steps.selftest.outputs.myOutput }}" == "Hello world"
