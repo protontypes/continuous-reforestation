@@ -2,9 +2,6 @@ name: "Python Container Action Template"
 description: "Get started with Python Container actions"
 author: "Jacob Tomlinson"
 inputs:
-  RAAS_API_KEY:
-    description: "The API KEY to access DigitalHumani.com - Reforestation as a Service"
-    value: DigitalHumani_API_KEY
   number_of_trees: 
     description: "Number of trees you want to plant"
     default: 1
