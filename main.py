@@ -16,7 +16,7 @@ def main():
     
     company_id = 'cd7cedcd'
     user = 'tjark'
-    trees = os.environ['number_of_trees']
+    trees = os.environ['INPUT_NUMBEROFTREES']
     body_para = {
             "treeCount": trees,
             "enterpriseId": company_id,
@@ -40,7 +40,7 @@ def main():
     
     print(message)
 
-    print(f"::set-output name=myOutput::{message}")
+    #print(f"::set-output name=myOutput::{message}")
 
 if __name__ == "__main__":
     main()

@@ -2,7 +2,7 @@ name: "Python Container Action Template"
 description: "Get started with Python Container actions"
 author: "Jacob Tomlinson"
 inputs:
-  number_of_trees: 
+  numberoftrees: 
     description: "Number of trees you want to plant"
     default: 1
 outputs:
