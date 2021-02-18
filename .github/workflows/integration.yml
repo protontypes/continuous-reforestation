@@ -9,8 +9,8 @@ jobs:
         id: selftest
 
         # Put your action repo here
-        uses: jacobtomlinson/python-container-action@master
+        uses: protontypes/continuous-reforestation@main
 
       - name: Check outputs
         run: |
-          test "${{ steps.selftest.outputs.myOutput }}" == "Hello world"
+            echo "${{ steps.selftest.outputs.myOutput }}"
