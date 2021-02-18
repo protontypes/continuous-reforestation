@@ -16,7 +16,7 @@ def main():
     
     company_id = 'cd7cedcd'
     user = 'tjark'
-    trees = os.environ['INPUT_NUMBEROFTREES']
+    trees = int(os.environ['INPUT_NUMBEROFTREES'])
     body_para = {
             "treeCount": trees,
             "enterpriseId": company_id,
