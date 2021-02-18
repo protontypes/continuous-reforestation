@@ -10,6 +10,8 @@ jobs:
 
         # Put your action repo here
         uses: protontypes/continuous-reforestation@main
+        with:
+            number_of_trees: 3
 
       - name: Check outputs
         run: |

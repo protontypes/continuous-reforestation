@@ -16,8 +16,9 @@ def main():
     
     company_id = 'cd7cedcd'
     user = 'tjark'
+    trees = os.environ['number_of_trees']
     body_para = {
-            "treeCount": 1,
+            "treeCount": trees,
             "enterpriseId": company_id,
             "projectId": "93322249",
             "user": user
@@ -32,7 +33,7 @@ def main():
     
     # "later" handling
     message = ''
-    if r.status_code == requests.codes.ok :
+    if r.status_code == requests.codes.ok:
         message = 'Request went through. All good.\n'+str(ddd['user'])+' planted '+str(ddd['treeCount'])+' tree(s). Very nice.'
     else :
         message = 'Something went wrong. \n Your error code is: '+str(r.status_code)
