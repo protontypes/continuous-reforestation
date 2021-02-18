@@ -1,11 +1,12 @@
+#!/usr/bin/python3
 import os
 import requests  # noqa We are just importing this to prove the dependency installed correctly
 
 
 def main():
-    my_input = os.environ["INPUT_MYINPUT"]
+    RAAS_API_KEY = os.environ['RAAS_API_KEY']
 
-    my_output = f"Hello {my_input}"
+    my_output = f"Hello {RAAS_API_KEY}"
 
     print(f"::set-output name=myOutput::{my_output}")
 

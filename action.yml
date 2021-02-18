@@ -2,9 +2,9 @@ name: "Python Container Action Template"
 description: "Get started with Python Container actions"
 author: "Jacob Tomlinson"
 inputs:
-  myInput:
-    description: "Input to use"
-    default: "world"
+  RAAS_API_KEY:
+    description: "The API KEY to access DigitalHumani.com - Reforestation as a Service"
+    value: DigitalHumani_API_KEY
 outputs:
   myOutput:
     description: "Output from the action"
