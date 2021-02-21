@@ -48,7 +48,6 @@ def main():
     else:
         message = "Something went wrong. \n Your error code is: " + str(r.status_code)
 
-
     print(f"::set-output name=response::{message}")
 
 
