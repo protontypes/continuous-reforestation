@@ -1,13 +1,30 @@
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
-author: "Jacob Tomlinson"
+name: "Continuous Reforestation"
+description: "Plant trees within your workflow with digitalhumani.com"
+author: "protontypes"
 inputs:
-  numberoftrees: 
-    description: "Number of trees you want to plant"
+  projectid:
+    description: "Id of the reforestation project for where you want the trees to be planted. Example of an id: 93333333 (Project Ids are 8 digits long)"
+    required: true
+  enterpriceid:
+    description: "Id of your enterprise. Example of an enterprise id: 11111111 (Enterprise Ids are 8 digits long)"
+    required: true
+  user: 
+    decription: "End user by whom the trees were planted"
+    required: true
+  treeCount: 
+    description: "Number of trees requested to plant. Example: 1"
+    required: true
     default: 1
+  production:
+    decription: "Use sandbox or production API"
+    required: true
+    default: false
+
+   
 outputs:
-  myOutput:
-    description: "Output from the action"
+  apiresponse:
+    description: "JSON response of the API"
+   
 runs:
   using: "docker"
   image: "Dockerfile"
