@@ -1,4 +1,4 @@
-# Continous Reforestation Action
+# Continous Reforestation
 
 [<img src="logo.svg" align="right" width="250">](https://github.com/protontypes/continuous-reforestation)
 [![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Lint/badge.svg)](https://github.com/jacobtomlinson/protontypes/continuous-reforestation/actions)
