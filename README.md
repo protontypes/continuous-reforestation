@@ -21,7 +21,7 @@ In `main.py` you will find a small example of accessing Action inputs and return
 * on milestone
 * on closed issue (or opened, ...)
 
-See more possible actions [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
+See more possible trigger events [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
 
 ## Usage
 
