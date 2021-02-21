@@ -11,8 +11,13 @@ jobs:
         # Put your action repo here
         uses: protontypes/continuous-reforestation@main
         with:
-            numberoftrees: 10
+            enterpriseid: "cd7cedcd"
+            user: ${{ github.actor }}
+            treecount: 10
+            projectid: "91919191"
+            treecount: 1
+            production: "false"
 
-      - name: Check outputs
+      - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.selftest.outputs.myOutput }}"
+            echo "${{ steps.selftest.outputs.response }}"
