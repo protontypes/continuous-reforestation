@@ -3,15 +3,10 @@
 [<img src="logo.svg" align="right" width="250">](https://github.com/protontypes/continuous-reforestation)
 [![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Lint/badge.svg)](https://github.com/jacobtomlinson/protontypes/continuous-reforestation/actions)
 [![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Integration%20Test/badge.svg)](https://github.com/protontypes/continuous-reforestation/actions) <br>
+A GitHub Action for planting trees within your development workflow. It uses the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/). <br> 
+Planting trees is an easy way to make a small difference in the fight against climate change. Every tree helps to capture CO2 as long as it grows. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the RaaS API, you or your project can plant trees in a transparent way by exposing the API calls and related statistics.  
 
-This is a GitHub actions for planting trees within your development workflow. It uses the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/).
-It provides simple and easy to use API to help connect websites and mobile applications to trusted reforestation organizations to have trees planted, or in this case, have them planted by GitHub events.
-
-Planting trees is an easy way to make a small difference in the fight against climate change. Every tree helps in capturing CO2 is long as it grows. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the Raas API, you or your company can plant trees in a transparent way. 
-
-Below you find inspiration for use cases and an example of how to integrate it into your workflows.
-
-> 🏁 To get started, click the `Use this template` button on this repository [which will create a new repository based on this template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
+Below you find inspiration for use cases and an example of how to integrate it into your daily workflow.
 
 ## Use cases
 
@@ -25,7 +20,7 @@ See more possible trigger events [here](https://docs.github.com/en/actions/refer
 
 ## Usage
 
-To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact).
+🏁 To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact).
 
 When your workflow is integrated on your repository, you need to change the API variables in the `.github/workflow/integration.yaml`.
 
