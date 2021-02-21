@@ -101,15 +101,15 @@ inputs:
   numberoftrees: 
     description: "Number of trees you want to plant."
     default: 1
-  enterpriseId:
-    description: "Number of trees you want to plant"
-    default: -1
   projectId: 
-    description: "Number of trees you want to plant"
+    description: "Where do"
     default: 06032322
   user: 
     description: "Username you want to use to plant trees."
-    default: "Bob"
+    default: ${{ github.actor }}
+  enterpriseId:
+    description: "Number of trees you want to plant"
+    default: -1
   authSecret: 
     description: "Your secret token as provided by your github secrets"
     default: 1
@@ -117,8 +117,8 @@ inputs:
     description: "Do you want to plant or test? False: you dont plant yet"
     default: False
 outputs:
-  myOutput:
-    description: "Output from the action"
+  response:
+    description: "JSON response of the RaaS API plant"
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -129,10 +129,10 @@ runs:
 
 | Input            | Description                           |
 |------------------|---------------------------------------|
-| `numberoftrees`  | Numbers of trees you want to plant.   |
-| `enterpriseId`   | An example optional input             |
-| `projectId`      | An example optional input             |
-| `user`           | An example optional input             |
+| `treecount`      | Numbers of trees you want to plant.   |
+| `projectid`      | An example optional input             |
+| `user`           | The user name you want to use to plant trees. Default is your GitHub user name.   |
+| `enterpriseId`   | Is a secret ptional input             |
 | `authSecret`     | An example optional input             |
 | `production`     | An example optional input             |
 
@@ -140,4 +140,4 @@ runs:
 
 | Output               | Description                           |
 |----------------------|---------------------------------------|
-| `myOutput`           | Returns Information about you plant   |
+| `response`           | JSON response of the RaaS API plant   |
