@@ -30,25 +30,25 @@ Describe how to use your action here.
 ### Example workflow
 
 ```yaml
-name: My Workflow
-on: [push, pull_request]
+name: Example Integration
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Run action
+      - uses: actions/checkout@master
+        # Put your action repo here
+      - uses: protontypes/continuous-reforestation@main
+        with:
+            enterpriseid: "cd7cedcd"
+            user: ${{ github.actor }}
+            treecount: 10
+            projectid: "91919191"
+            production: "false"
 
-      # Put your action repo here
-      uses: me/myaction@master
-
-      # Put an example of your mandatory inputs here
-      with:
-        myInput: world
-     # Put an example of using your outputs here
-    - name: Check outputs
-      run: |
-      echo "Outputs - ${{ steps.myaction.outputs.myOutput }}"
+      - name: Response of digitalhumani.com RaaS API
+        run: |
+            echo "${{ steps.selftest.outputs.response }}"
 ```
 ---
 
