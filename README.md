@@ -30,16 +30,17 @@ Describe how to use your action here.
 ### Example workflow
 
 ```yaml
-name: Example Integration
+name: Integration Test
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-        # Put your action repo here
+      
       - uses: protontypes/continuous-reforestation@main
         with:
+        # Enter your API variables below
             enterpriseid: "cd7cedcd"
             user: ${{ github.actor }}
             treecount: 10
