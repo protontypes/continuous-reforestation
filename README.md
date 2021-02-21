@@ -27,7 +27,7 @@ See more possible trigger events [here](https://docs.github.com/en/actions/refer
 
 To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact).
 
-When your workflow is integrated on your repository, you need to change the API variables in the `inspiration.yaml`.
+When your workflow is integrated on your repository, you need to change the API variables in the `.github/workflow/integration.yaml`.
 
 To see a list of all possible projects check the list [here](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
@@ -61,11 +61,11 @@ jobs:
 
 | Input            | Description                           |
 |------------------|---------------------------------------|
-| `enterpriseid`   | Is a secret ptional input             |
-| `user`           | The user name you want to use to plant trees. Default is your GitHub user name |
-| `projectid`      | An example optional input             |
-| `treeCount`      | Numbers of trees you want to plant.   |
-| `production`     | An example optional input             |
+| `enterpriseid`   | Id of your enterprise.                |
+| `user`           | End user by whom the trees were planted. Default is your GitHub user name. |
+| `projectid`      | Id of the reforestation project for where you want the trees to be planted.    |
+| `treeCount`      | Number of trees requested to plant.   |
+| `production`     | Use sandbox or production API         |
 
 ### Outputs
 
