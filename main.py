@@ -7,38 +7,42 @@ import json
 
 
 def main():
-    # RAAS_API_KEY = os.environ['RAAS_API_KEY']
-    # my_output = f"{message}
-
     # header maybe
     # key: x-api-key
     # value: YOUR_API_KEY
 
-    company_id = "cd7cedcd"
-    user = "tjark"
-    trees = int(os.environ["INPUT_NUMBEROFTREES"])
+    enterprise_id = os.environ["INPUT_ENTERPRISEID"]
+    project_id = os.environ["INPUT_PROJECTID"]
+    user = os.environ["INPUT_USER"]
+    treecount = int(os.environ["INPUT_TREECOUNT"])
+    production = os.environ["INPUT_PRODUCTION"]
     body_para = {
-        "treeCount": trees,
-        "enterpriseId": company_id,
-        "projectId": "93322249",
+        "treeCount": treecount,
+        "enterpriseId": enterprise_id,
+        "projectId": project_id,
         "user": user,
     }
-    url = "https://api-dev.digitalhumani.com/tree"  # currently the dev API
+    if production == "true":
+        print("Using production API")
+        url = "https://api.digitalhumani.com/tree"
+    else:
+        print("Using sandbox API for development")
+        url = "https://api-dev.digitalhumani.com/tree"
 
     # run the post request
     r = requests.post(url, json=body_para)
 
     # put the response int a dictionary for easier handling later
-    ddd = json.loads(r.text)
+    response = json.loads(r.text)
 
     # "later" handling
     message = ""
     if r.status_code == requests.codes.ok:
         message = (
             "Request went through. All good.\n"
-            + str(ddd["user"])
+            + str(response["user"])
             + " planted "
-            + str(ddd["treeCount"])
+            + str(response["treeCount"])
             + " tree(s). Very nice."
         )
     else:
