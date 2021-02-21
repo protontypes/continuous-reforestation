@@ -1,6 +1,6 @@
 name: "Python Container Action Template"
 description: "Get started with Python Container actions"
-author: "Jacob Tomlinson"
+author: "protontypes"
 inputs:
   numberoftrees: 
     description: "Number of trees you want to plant"
