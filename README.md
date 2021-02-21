@@ -2,19 +2,17 @@
 
 [<img src="logo.svg" align="right" width="250">](https://github.com/protontypes/continuous-reforestation)
 [![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Lint/badge.svg)](https://github.com/jacobtomlinson/protontypes/continuous-reforestation/actions)
-[![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Integration%20Test/badge.svg)](https://github.com/protontypes/continuous-reforestation/actions) <br>
+[![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Integration%20Test/badge.svg)](https://github.com/protontypes/continuous-reforestation/actions) <br> </br>
 A GitHub Action for planting trees within your development workflow. It uses the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/). <br> 
-Planting trees is an easy way to make a small difference in the fight against climate change. Every tree helps to capture CO2 as long as it grows. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the RaaS API, you or your project can plant trees in a transparent way by exposing the API calls and related statistics.  
-
-Below you find inspiration for use cases and an example of how to integrate it into your daily workflow.
+Planting trees is an easy way to make a difference in the fight against climate change. Every tree helps to bind CO2 as long as it grows and creates living space for wildlife. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the RaaS API, you or your project can plant trees in a transparent way by exposing the API calls and related statistics.  
 
 ## Use cases
-
-* Have a scheduled tree-plant (i.e. once per week)
-* Plant trees on pull requests (and/or push, ...)
-* Plant trees on linter fails or sucesses (as self-motivation)
-* Plant tree for first ever contribution
-* Or on a new release, or milestone, or closed issue
+Plant trees on ...
+* pull requests (and/or push, ...).
+* failed or successful tests.
+* the very first contribution to an open source project.
+* a new release, a milestone, or a closed issue.
+* a scheduled event (i.e. once per week).
 
 See more possible trigger events [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
 
