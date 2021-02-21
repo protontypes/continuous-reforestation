@@ -10,7 +10,18 @@ In `main.py` you will find a small example of accessing Action inputs and return
 
 > 🏁 To get started, click the `Use this template` button on this repository [which will create a new repository based on this template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
 
+## Use cases
 
+* Have a scheduled tree-plant (i.e. once per week)
+* plant trees on pull requests (and/or push, ...)
+* plant trees on linter fails (as self-motivation)
+  * or on sucess ;)
+* Plant tree for first ever contribution
+* on release
+* on milestone
+* on closed issue (or opened, ...)
+
+See more possible actions [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
 
 ## Usage
 
@@ -34,96 +45,12 @@ jobs:
       # Put an example of your mandatory inputs here
       with:
         myInput: world
+     # Put an example of using your outputs here
+    - name: Check outputs
+      run: |
+      echo "Outputs - ${{ steps.myaction.outputs.myOutput }}"
 ```
-
-
-## Examples
-
-> NOTE: People ❤️ cut and paste examples. Be generous with them!
-
-### Using the optional input
-
-This is how to use the optional input.
-
-```yaml
-with:
-  myInput: world
-  anotherInput: optional
-```
-
-### Using outputs
-
-Show people how to use your outputs in another action.
-
-```yaml
-steps:
-- uses: actions/checkout@master
-- name: Run action
-  id: myaction
-
-  # Put your action name here
-  uses: me/myaction@master
-
-  # Put an example of your mandatory arguments here
-  with:
-    myInput: world
-
-# Put an example of using your outputs here
-- name: Check outputs
-    run: |
-    echo "Outputs - ${{ steps.myaction.outputs.myOutput }}"
-```
-
 ---
-
-## Possible use cases
-
-* Have a scheduled tree-plant (i.e. once per week)
-* plant trees on pull requests (and/or push, ...)
-* plant trees on linter fails (as self-motivation)
-  * or on sucess ;)
-* Plant tree for first ever contribution
-* on release
-* on milestone
-* on closed issue (or opened, ...)
-
-See more possible actions [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
-
-## Usage
-
-### Example workflow
-
-```yaml
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
-author: "protontypes"
-inputs:
-  numberoftrees: 
-    description: "Number of trees you want to plant."
-    default: 1
-  projectId: 
-    description: "Where do"
-    default: 06032322
-  user: 
-    description: "Username you want to use to plant trees."
-    default: ${{ github.actor }}
-  enterpriseId:
-    description: "Number of trees you want to plant"
-    default: -1
-  authSecret: 
-    description: "Your secret token as provided by your github secrets"
-    default: 1
-  production:
-    description: "Do you want to plant or test? False: you dont plant yet"
-    default: False
-outputs:
-  response:
-    description: "JSON response of the RaaS API plant"
-runs:
-  using: "docker"
-  image: "Dockerfile"
-```
-
 
 ### Inputs
 
