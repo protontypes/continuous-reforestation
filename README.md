@@ -2,8 +2,8 @@
 
 [<img src="logo.svg" align="right" width="250">](https://github.com/protontypes/continuous-reforestation)
 [![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Lint/badge.svg)](https://github.com/jacobtomlinson/protontypes/continuous-reforestation/actions)
-[![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Integration%20Test/badge.svg)](https://github.com/protontypes/continuous-reforestation/actions) <br> </br>
-A GitHub Action for planting trees within your development workflow. It uses the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/). <br> 
+[![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Integration%20Test/badge.svg)](https://github.com/protontypes/continuous-reforestation/actions) <br> 
+A GitHub Action for planting trees within your development workflow. It uses the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/). <br> </br>
 Planting trees is an easy way to make a difference in the fight against climate change. Every tree helps to bind CO2 as long as it grows and creates living space for wildlife. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the RaaS API, you or your project can plant trees in a transparent way by exposing the API calls and related statistics.  
 
 ## Use cases
