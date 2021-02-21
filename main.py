@@ -48,9 +48,8 @@ def main():
     else:
         message = "Something went wrong. \n Your error code is: " + str(r.status_code)
 
-    print(message)
 
-    # print(f"::set-output name=myOutput::{message}")
+    print(f"::set-output name=response::{message}")
 
 
 if __name__ == "__main__":
