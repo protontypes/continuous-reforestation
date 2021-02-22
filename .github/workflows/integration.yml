@@ -4,8 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: "apicall"
       - uses: actions/checkout@master
-      
       - uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
@@ -17,4 +17,4 @@ jobs:
 
       - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.selftest.outputs.response }}"
+            echo "${{ steps.apicalli.output.response }}"

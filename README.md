@@ -22,7 +22,7 @@ See more possible trigger events [here](https://docs.github.com/en/actions/refer
 
 When your workflow is integrated on your repository, you need to change the API variables in the `.github/workflow/integration.yaml`.
 
-To see a list of all possible projects check the list [here](https://digitalhumani.com/docs/#appendixlist-of-projects).
+To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
 ### Example workflow
 

@@ -6,26 +6,21 @@ inputs:
   enterpriseid:
     description: "Id of your enterprise. Example of an enterprise id: 11111111 (Enterprise Ids are 8 digits long)"
     required: true
-  user: 
+  user:
     decription: "End user by whom the trees were planted"
-    required: true
     default: ${{ github.actor }}
   projectid:
     description: "Id of the reforestation project for where you want the trees to be planted. Example of an id: 93333333 (Project Ids are 8 digits long)"
     required: true
-  treeCount: 
+  treeCount:
     description: "Number of trees requested to plant. Example: 1"
-    required: true
     default: 1
   production:
     decription: "Use sandbox or production API"
-    required: true
     default: "false"
-   
 outputs:
   response:
     description: "JSON response of the RaaS API"
-   
 runs:
   using: "docker"
   image: "Dockerfile"
