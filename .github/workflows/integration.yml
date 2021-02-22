@@ -4,9 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "apicall"
       - uses: actions/checkout@master
-      - uses: protontypes/continuous-reforestation@main
+      - name: "raasrequest"
+        uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
             enterpriseid: "cd7cedcd"
