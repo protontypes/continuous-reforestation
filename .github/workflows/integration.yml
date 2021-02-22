@@ -17,4 +17,4 @@ jobs:
 
       - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.apicalli.outputs.response }}"
+            echo "${{ steps.raasrequest.outputs.response }}"
