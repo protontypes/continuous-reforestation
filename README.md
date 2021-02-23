@@ -33,20 +33,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      
-      - uses: protontypes/continuous-reforestation@main
+      - name: "raasrequest"
+        uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
-            enterpriseid: "<your enterpriseid>"
+            apikey: ${{ secrets.raaskey }}
+            enterpriseid: "cd7cedcd"
             user: ${{ github.actor }}
             treecount: 10
-            projectid: "<the project for planting the trees>"
+            projectid: "91919191"
             production: "false"
 
       - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.selftest.outputs.response }}"
+            echo "${{ steps.raasrequest.outputs.response }}"
 ```
 ---
 

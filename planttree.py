@@ -20,7 +20,7 @@ def main():
         "projectId": project_id,
         "user": user,
     }
-    headers = {'x-api-key'; api_key}
+    headers = {'x-api-key': api_key}
     if production == "true":
         print("Using production API")
         url = "https://api.digitalhumani.com/tree"

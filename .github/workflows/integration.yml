@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "raasrequest"
+      - name: "PlantTree"
         uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
@@ -17,4 +17,4 @@ jobs:
 
       - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.raasrequest.outputs.response }}"
+            echo "${{ steps.planttree.outputs.response }}"
