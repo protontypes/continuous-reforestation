@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import os
-import requests 
+import requests
 from urllib.parse import urljoin
 import posixpath
 import json
@@ -20,7 +20,7 @@ def main():
         "projectId": project_id,
         "user": user,
     }
-    headers = {'x-api-key': api_key}
+    headers = {"x-api-key": api_key}
     if production == "true":
         print("Using production API")
         url = "https://api.digitalhumani.com/tree"
@@ -29,7 +29,7 @@ def main():
         url = "https://api-dev.digitalhumani.com/tree"
 
     # run the post request
-    r = requests.post(url, json=body_para headers=headers)
+    r = requests.post(url, json=body_para, headers=headers)
 
     # put the response int a dictionary for easier handling later
     response = json.loads(r.text)
