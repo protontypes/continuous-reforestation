@@ -8,6 +8,7 @@ jobs:
         uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
+            apikey: ${{ secrets.raaskey }}
             enterpriseid: "cd7cedcd"
             user: ${{ github.actor }}
             treecount: 10

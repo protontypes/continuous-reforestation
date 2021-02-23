@@ -3,6 +3,8 @@ description: "Plant trees within your development workflow with digitalhumani.co
 author: "protontypes"
 
 inputs:
+  apikey:
+    description: "The API key obtained from digitalhumani.com"
   enterpriseid:
     description: "Id of your enterprise. Example of an enterprise id: 11111111 (Enterprise Ids are 8 digits long)"
     required: true

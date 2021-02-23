@@ -1,27 +1,26 @@
 #!/usr/bin/python3
 import os
-import requests  # noqa We are just importing this to prove the dependency installed correctly
+import requests 
 from urllib.parse import urljoin
 import posixpath
 import json
 
 
 def main():
-    # header maybe
-    # key: x-api-key
-    # value: YOUR_API_KEY
 
     enterprise_id = os.environ["INPUT_ENTERPRISEID"]
     project_id = os.environ["INPUT_PROJECTID"]
     user = os.environ["INPUT_USER"]
     treecount = int(os.environ["INPUT_TREECOUNT"])
     production = os.environ["INPUT_PRODUCTION"]
+    api_key = os.environ["INPUT_APIKEY"]
     body_para = {
         "treeCount": treecount,
         "enterpriseId": enterprise_id,
         "projectId": project_id,
         "user": user,
     }
+    headers = {'x-api-key'; api_key}
     if production == "true":
         print("Using production API")
         url = "https://api.digitalhumani.com/tree"
@@ -30,7 +29,7 @@ def main():
         url = "https://api-dev.digitalhumani.com/tree"
 
     # run the post request
-    r = requests.post(url, json=body_para)
+    r = requests.post(url, json=body_para headers=headers)
 
     # put the response int a dictionary for easier handling later
     response = json.loads(r.text)
