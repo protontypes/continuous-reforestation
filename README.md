@@ -57,8 +57,8 @@ jobs:
 | `enterpriseid`   | Id of your enterprise.                |
 | `user`           | End user by whom the trees were planted. Default is your GitHub user name. |
 | `projectid`      | Id of the reforestation project for where you want the trees to be planted.    |
-| `treeCount`      | Number of trees requested to plant.   |
-| `production`     | Use sandbox or production API         |
+| `treeCount`      | Number of trees requested to plant per API call. (For example 10)   |
+| `production`     | Use sandbox or production API. (true or false)        |
 
 ### Outputs
 

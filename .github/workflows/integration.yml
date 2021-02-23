@@ -13,7 +13,7 @@ jobs:
             user: ${{ github.actor }}
             treecount: 10
             projectid: "91919191"
-            production: "false"
+            production: "true"
 
       - name: Response of digitalhumani.com RaaS API
         run: |
