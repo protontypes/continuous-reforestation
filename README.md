@@ -64,4 +64,4 @@ jobs:
 
 | Output           | Description                           |
 |------------------|---------------------------------------|
-| `response`       | JSON response of the RaaS API plant   |
+| `response`       | JSON response of the RaaS API |
