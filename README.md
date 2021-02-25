@@ -6,7 +6,7 @@ A GitHub Action for planting trees within your development workflow using the Re
 [![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Integration%20Test/badge.svg)](https://github.com/protontypes/continuous-reforestation/actions)
 [![](https://badgen.net/badge/icon/Community%20Chat/green?icon=gitter&label)](https://gitter.im/protontypes/community)
 
-## Use cases
+## Use cases 
 Plant trees on ...
 * pull requests (and/or push, ...).
 * failed or successful tests.
