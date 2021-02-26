@@ -24,7 +24,7 @@ When your workflow is integrated on your repository, you need to change the API 
 
 To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
-## Dashboard 
+### Dashboard 
 
 📈 A dashboard is provided to ensure a high level of transparency. This is currently under development and will provide additional details.  For this purpose visit:
 ``
