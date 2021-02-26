@@ -1,4 +1,4 @@
-name: Integration Test
+name: Integration Example
 on: [push]
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
             enterpriseid: "cd7cedcd"
             user: ${{ github.actor }}
             treecount: 10
-            projectid: "91919191"
+            projectid: "92222222" # onetreeplanted.org/collections/latin-america/products/brazil-forests
             production: "true"
 
       - name: Response of digitalhumani.com RaaS API
