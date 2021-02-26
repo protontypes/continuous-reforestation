@@ -35,7 +35,7 @@ def main():
     r = requests.post(url, json=body_para, headers=headers)
 
     # put the response int a dictionary for easier handling later
-    response = json.loads(r)
+    response = json.loads(r.text)
 
     # "later" handling
     message = ""
@@ -50,7 +50,7 @@ def main():
     else:
         message = "Something went wrong. \n Your error code is: " + str(r.status_code)
 
-    print(f"::set-output name=response::{message}")
+    print(f"::set-output name=response::{response}")
 
 
 if __name__ == "__main__":
