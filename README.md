@@ -24,16 +24,24 @@ When your workflow is integrated on your repository, you need to change the API 
 
 To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
+## Dashboard 
+
+📈 A dashboard is provided to ensure a high level of transparency. This is currently under development and will provide additional details.  For this purpose visit:
+``
+https://digitalhumani.com/dashboard/<enterpriseid>
+``
+
 ### Example workflow
 
 ```yaml
-name: Integration Test
+name: Integration Example
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "raasrequest"
+      - name: Plant Trees
+        id: planttree
         uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
@@ -41,12 +49,13 @@ jobs:
             enterpriseid: "cd7cedcd"
             user: ${{ github.actor }}
             treecount: 10
-            projectid: "91919191"
-            production: "false"
+            projectid: "92222222" # onetreeplanted.org/collections/latin-america/products/brazil-forests
+            production: "true"
 
       - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.raasrequest.outputs.response }}"
+            echo "${{ steps.planttree.outputs.response }}"
+
 ```
 ---
 
@@ -54,11 +63,11 @@ jobs:
 
 | Input            | Description                           |
 |------------------|---------------------------------------|
-| `enterpriseid`   | Id of your enterprise.                |
+| `enterpriseid`   | ID of your enterprise.                |
 | `user`           | End user by whom the trees were planted. Default is your GitHub user name. |
-| `projectid`      | Id of the reforestation project for where you want the trees to be planted.    |
-| `treeCount`      | Number of trees requested to plant per API call. (For example 10)   |
-| `production`     | Use sandbox or production API. (true or false)        |
+| `projectid`      | ID of the reforestation project for where you want the trees to be planted.    |
+| `treeCount`      | Number of trees requested to plant per API call as integer. Every tree will create costs of 1$ per tree |
+| `production`     | Set 'true' for the production API or false for the development API  |
 
 ### Outputs
 
