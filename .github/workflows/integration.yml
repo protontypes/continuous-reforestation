@@ -4,7 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "PlantTree"
+      - name: Plant a Tree
+        id: planttree
         uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
