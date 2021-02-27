@@ -1,6 +1,9 @@
 name: "continuous-reforestation"
 description: "Plant trees within your development workflow with digitalhumani.com"
 author: "protontypes"
+branding:
+  icon: 'award'  
+  color: 'green'
 
 inputs:
   apikey:
