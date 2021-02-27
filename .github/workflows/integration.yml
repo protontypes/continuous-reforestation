@@ -1,16 +1,24 @@
-name: Integration Test
-on: [push]
+name: Integration Example
+on: 
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Self test
-        id: selftest
+      - name: Plant a Tree
+        id: planttree
+        uses: protontypes/continuous-reforestation@main
+        with:
+        # Enter your API variables below
+            apikey: ${{ secrets.raaskey }}
+            enterpriseid: "cd7cedcd"
+            user: ${{ github.actor }}
+            treecount: 10
+            projectid: "92222222" # onetreeplanted.org/collections/latin-america/products/brazil-forests
+            production: "true"
 
-        # Put your action repo here
-        uses: jacobtomlinson/python-container-action@master
-
-      - name: Check outputs
+      - name: Response of digitalhumani.com RaaS API
         run: |
-          test "${{ steps.selftest.outputs.myOutput }}" == "Hello world"
+            echo "${{ steps.planttree.outputs.response }}"

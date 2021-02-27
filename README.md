@@ -1,85 +1,78 @@
-# Python Container Action Template
+# Continous Reforestation
 
-[![Action Template](https://img.shields.io/badge/Action%20Template-Python%20Container%20Action-blue.svg?colorA=24292e&colorB=0366d6&style=flat&longCache=true&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAM6wAADOsB5dZE0gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAERSURBVCiRhZG/SsMxFEZPfsVJ61jbxaF0cRQRcRJ9hlYn30IHN/+9iquDCOIsblIrOjqKgy5aKoJQj4O3EEtbPwhJbr6Te28CmdSKeqzeqr0YbfVIrTBKakvtOl5dtTkK+v4HfA9PEyBFCY9AGVgCBLaBp1jPAyfAJ/AAdIEG0dNAiyP7+K1qIfMdonZic6+WJoBJvQlvuwDqcXadUuqPA1NKAlexbRTAIMvMOCjTbMwl1LtI/6KWJ5Q6rT6Ht1MA58AX8Apcqqt5r2qhrgAXQC3CZ6i1+KMd9TRu3MvA3aH/fFPnBodb6oe6HM8+lYHrGdRXW8M9bMZtPXUji69lmf5Cmamq7quNLFZXD9Rq7v0Bpc1o/tp0fisAAAAASUVORK5CYII=)](https://github.com/jacobtomlinson/python-container-action)
-[![Actions Status](https://github.com/jacobtomlinson/python-container-action/workflows/Lint/badge.svg)](https://github.com/jacobtomlinson/python-container-action/actions)
-[![Actions Status](https://github.com/jacobtomlinson/python-container-action/workflows/Integration%20Test/badge.svg)](https://github.com/jacobtomlinson/python-container-action/actions)
+[<img src="logo.svg" align="right" width="250">](https://github.com/protontypes/continuous-reforestation)
+A GitHub Action for planting trees within your development workflow using the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/). Planting trees is an easy way to make a difference in the fight against climate change. Every tree helps to bind CO2 as long as it grows and creates living space for wildlife. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the RaaS API, you or your project can plant trees in a transparent way by exposing the API calls and related statistics. <br>  <br>
+[![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Lint/badge.svg)](https://github.com/jacobtomlinson/protontypes/continuous-reforestation/actions)
+[![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Integration%20Test/badge.svg)](https://github.com/protontypes/continuous-reforestation/actions)
+[![](https://badgen.net/badge/icon/Community%20Chat/green?icon=gitter&label)](https://gitter.im/protontypes/community)
 
-This is a template for creating GitHub actions and contains a small Python application which will be built into a minimal [Container Action](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-a-docker-container-action). Our final container from this template is ~50MB, yours may be a little bigger once you add some code. If you want something smaller check out my [go-container-action template](https://github.com/jacobtomlinson/go-container-action/actions).
-
-In `main.py` you will find a small example of accessing Action inputs and returning Action outputs. For more information on communicating with the workflow see the [development tools for GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/development-tools-for-github-actions).
-
-> 🏁 To get started, click the `Use this template` button on this repository [which will create a new repository based on this template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
+## Use cases
+Plant trees on ...
+* pull requests (and/or push, ...).
+* failed or successful tests.
+* the very first contribution to an open source project.
+* a new release, a milestone, or a closed issue.
+* a scheduled event (i.e. once per week).
+* to compensate the carbon footprint when deploying digital product.
+* See more possible trigger events [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
 
 ## Usage
 
-Describe how to use your action here.
+1. 🏁 To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact).
+
+2. Copy the example worflow to `<your_git_repository>/.github/workflow/integration.yaml` and change the variables in the workflow to your data. Set the `production` variable to `false` to test your implementation within the sandboxed development API. Push your script to GitHub and check the GitHub Action tab of your project.
+
+3. 📈 A dashboard is provided to ensure a high level of transparency. This is currently under development and will provide additional details. For this purpose visit:
+``
+https://digitalhumani.com/dashboard/<enterpriseid>
+``
+
+4. Verify the number of trees planted in the dashboard development statistics. After a successful run add the API key to the GitHub secrets of your project our organizations as `raaskey`
+
+To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
 ### Example workflow
 
 ```yaml
-name: My Workflow
-on: [push, pull_request]
+name: Integration Example
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Run action
+      - name: Plant a Tree
+        id: planttree
+        uses: protontypes/continuous-reforestation@main
+        with:
+        # Enter your API variables below
+            apikey: ${{ secrets.raaskey }}
+            enterpriseid: "cd7cedcd"
+            user: ${{ github.actor }}
+            treecount: 10
+            projectid: "92222222" # onetreeplanted.org/collections/latin-america/products/brazil-forests
+            production: "true"
 
-      # Put your action repo here
-      uses: me/myaction@master
-
-      # Put an example of your mandatory inputs here
-      with:
-        myInput: world
+      - name: Response of digitalhumani.com RaaS API
+        run: |
+            echo "${{ steps.planttree.outputs.response }}"
 ```
+---
 
 ### Inputs
 
-| Input                                             | Description                                        |
-|------------------------------------------------------|-----------------------------------------------|
-| `myInput`  | An example mandatory input    |
-| `anotherInput` _(optional)_  | An example optional input    |
+| Input            | Description                           |
+|------------------|---------------------------------------|
+| `enterpriseid`   | ID of your enterprise.                |
+| `user`           | End user by whom the trees were planted. Default is your GitHub user name. |
+| `projectid`      | ID of the reforestation project for where you want the trees to be planted.    |
+| `treeCount`      | Number of trees requested to plant per API call as integer. Every tree will create costs of 1$ per tree |
+| `production`     | Set 'true' for the production API or false for the development API  |
 
 ### Outputs
 
-| Output                                             | Description                                        |
-|------------------------------------------------------|-----------------------------------------------|
-| `myOutput`  | An example output (returns 'Hello world')    |
-
-## Examples
-
-> NOTE: People ❤️ cut and paste examples. Be generous with them!
-
-### Using the optional input
-
-This is how to use the optional input.
-
-```yaml
-with:
-  myInput: world
-  anotherInput: optional
-```
-
-### Using outputs
-
-Show people how to use your outputs in another action.
-
-```yaml
-steps:
-- uses: actions/checkout@master
-- name: Run action
-  id: myaction
-
-  # Put your action name here
-  uses: me/myaction@master
-
-  # Put an example of your mandatory arguments here
-  with:
-    myInput: world
-
-# Put an example of using your outputs here
-- name: Check outputs
-    run: |
-    echo "Outputs - ${{ steps.myaction.outputs.myOutput }}"
-```
+| Output           | Description                           |
+|------------------|---------------------------------------|
+| `response`       | JSON response of the RaaS API |
