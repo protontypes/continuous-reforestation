@@ -52,7 +52,7 @@ jobs:
             enterpriseid: "cd7cedcd"
             user: ${{ github.actor }}
             treecount: 10
-            projectid: "92222222" # onetreeplanted.org/collections/latin-america/products/brazil-forests
+            projectid: "14442771" #  This project ID can be used to have your trees planted where they are needed the most, so this is a great ID to use by default when making the API call
             production: "true"
 
       - name: Response of digitalhumani.com RaaS API
