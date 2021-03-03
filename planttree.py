@@ -7,14 +7,14 @@ import json
 
 
 def main():
-    # Variables set by the integration.yml script
+    # Variables set by the CI script
     enterprise_id = os.environ["INPUT_ENTERPRISEID"]
     project_id = os.environ["INPUT_PROJECTID"]
     user = os.environ["INPUT_USER"]
     treecount = int(os.environ["INPUT_TREECOUNT"])
     production = os.environ["INPUT_PRODUCTION"]
     api_key = os.environ["INPUT_APIKEY"]
-
+    
     # REST API Parameters
     body_para = {
         "treeCount": treecount,
@@ -22,23 +22,24 @@ def main():
         "projectId": project_id,
         "user": user,
     }
+    headers = {"x-api-key": api_key}
 
-    # Using the sanbox API does not require any API key
+    # Check of we run in development or production mode 
+    # Using the sandbox API does not require any API key
     if production == "true":
         print("Using production API")
         url = "https://api.digitalhumani.com/tree"
     else:
         print("Using sandbox API for development")
-        url = "https://api-dev.digitalhumani.com/tree"
-    headers = {"x-api-key": api_key}
+        url = "https://api-dev.digitalhumani.com/tree"   
+    
     # run the RaaS request
     r = requests.post(url, json=body_para, headers=headers)
 
-    # put the response int a dictionary for easier handling later
+    # put the response int a dictionary
     response = json.loads(r.text)
 
-    # "later" handling
-    message = ""
+    # create a simple human readable response message
     if r.status_code == requests.codes.ok:
         message = (
             "Request successful\n"
@@ -46,11 +47,16 @@ def main():
             + " planted "
             + str(response["treeCount"])
             + " tree(s)."
+            + "Find more information on dashboard:"
+            + "https://digitalhumani.com/dashboard/"+str(enterprise_id)+".html"
         )
     else:
         message = "Something went wrong. \n Your error code is: " + str(r.status_code)
 
+    # return a simple human readable status message
     print(f"::set-output name=status::{message}")
+    
+    # return the dict to the CI script for following data processing
     print(f"::set-output name=response::{response}")
 
 
