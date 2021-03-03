@@ -14,7 +14,7 @@ def main():
     treecount = int(os.environ["INPUT_TREECOUNT"])
     production = os.environ["INPUT_PRODUCTION"]
     api_key = os.environ["INPUT_APIKEY"]
-    
+
     # REST API Parameters
     body_para = {
         "treeCount": treecount,
@@ -24,15 +24,15 @@ def main():
     }
     headers = {"x-api-key": api_key}
 
-    # Check of we run in development or production mode 
+    # Check of we run in development or production mode
     # Using the sandbox API does not require any API key
     if production == "true":
         print("Using production API")
         url = "https://api.digitalhumani.com/tree"
     else:
         print("Using sandbox API for development")
-        url = "https://api-dev.digitalhumani.com/tree"   
-    
+        url = "https://api-dev.digitalhumani.com/tree"
+
     # run the RaaS request
     r = requests.post(url, json=body_para, headers=headers)
 
@@ -48,14 +48,16 @@ def main():
             + str(response["treeCount"])
             + " tree(s)."
             + "Find more information on dashboard:"
-            + "https://digitalhumani.com/dashboard/"+str(enterprise_id)+".html"
+            + "https://digitalhumani.com/dashboard/"
+            + str(enterprise_id)
+            + ".html"
         )
     else:
         message = "Something went wrong. \n Your error code is: " + str(r.status_code)
 
     # return a simple human readable status message
     print(f"::set-output name=status::{message}")
-    
+
     # return the dict to the CI script for following data processing
     print(f"::set-output name=response::{response}")
 

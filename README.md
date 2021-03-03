@@ -27,7 +27,7 @@ Plant trees on ...
 https://digitalhumani.com/dashboard/<enterpriseid>
 ``
 
-4. Verify the number of trees planted in the dashboard development statistics. After a successful run add the API key to the GitHub secrets of your project our organizations as `raaskey`
+4. Verify the number of trees planted in the dashboard development statistics. After a successful run add the API key to the GitHub secrets of your project our organizations as `raaskey`. Trigger the Action again and finally create a real request to plant a tree.
 
 To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
@@ -52,7 +52,7 @@ jobs:
             enterpriseid: "cd7cedcd"
             user: ${{ github.actor }}
             treecount: 10
-            projectid: "14442771" #  This project ID can be used to have your trees planted where they are needed the most, so this is a great ID to use by default when making the API call
+            projectid: "14442771" #  This project ID can be used to have your trees planted where they are needed the most, so this is a great ID to use by default when making the API call.
             production: "true"
 
       - name: Response of digitalhumani.com RaaS API
@@ -68,8 +68,8 @@ jobs:
 | `enterpriseid`   | ID of your enterprise.                |
 | `user`           | End user by whom the trees were planted. Default is your GitHub user name. |
 | `projectid`      | ID of the reforestation project for where you want the trees to be planted.    |
-| `treeCount`      | Number of trees requested to plant per API call as integer. Every tree will create costs of 1$ per tree |
-| `production`     | Set 'true' for the production API or false for the development API  |
+| `treeCount`      | Number of trees requested to plant per API call as integer. Every tree will create costs of 1$ per tree. |
+| `production`     | Set 'true' for the production API or false for the development API. |
 
 ### Outputs
 
