@@ -14,7 +14,7 @@ Plant trees on ...
 * a new release, a milestone, or a closed issue.
 * a scheduled event (i.e. once per week).
 * to compensate the carbon footprint when deploying digital product.
-* See more possible trigger events [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
+See more possible trigger events [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
 
 ## Usage
 
