@@ -18,16 +18,18 @@ Plant trees on ...
 
 ## Usage
 
-1. To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact). You also receive the "x-api-key" value corresponding for your enterprise ID. This is your secret authentication key. **Do not post it directly to your integration.yml file**.
+1. 🏁 To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact). You also receive the "x-api-key" value corresponding for your enterprise ID. This is your secret authentication key. **Do not post it directly to your integration.yml file**.
 
-2. Copy the example worflow to `<your_git_repository>/.github/workflow/integration.yaml` and change the variables in the workflow to your data. Set the `production` variable to `false` to test your implementation within the sandboxed development API. Push your script to GitHub and check the GitHub Action tab of your project. Your authentication "x-api-key" is added as a secret in your repository `Settings` -> `Secrets` -> `New Repository Secret`: Name: `RAASKEY`, Value: `<your x-api-key>`.
+2. ✔️ Copy the example worflow to `<your_git_repository>/.github/workflow/integration.yaml` and change the variables in the workflow to your data. Set the `production` variable to `false` to test your implementation within the sandboxed development API. Push your script to GitHub and check the GitHub Action tab of your project. 
 
-3. 📈 A dashboard is provided to ensure a high level of transparency. This is currently under development and will provide additional details. For this purpose visit:
+3. 🗝️ Add your authentication "x-api-key" is  as a secret in your repository `Settings` -> `Secrets` -> `New Repository Secret`: Name: `RAASKEY`, Value: `<your x-api-key>`.
+
+4. 📈 A dashboard is provided to ensure a high level of transparency. This is currently under development and will provide additional details. For this purpose visit:
 ``
 https://digitalhumani.com/dashboard/<enterpriseid>
 ``
 
-4. Verify the number of trees planted in the dashboard development statistics. After a successful run add the API key to the GitHub secrets of your project our organizations as `raaskey`. Trigger the Action again and finally create a real request to plant a tree. 🏁
+5.🌱 Verify the number of trees planted in the dashboard development statistics. After a successful run add the API key to the GitHub secrets of your project our organizations as `raaskey`. Trigger the Action again and finally create a real request to plant a tree. 
 
 To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
