@@ -29,7 +29,7 @@ Plant trees on ...
 https://digitalhumani.com/dashboard/<enterpriseid>
 ``
 
-5.🌱 Verify the number of trees planted in the dashboard development statistics. After a successful run add the API key to the GitHub secrets of your project our organizations as `raaskey`. Trigger the Action again and finally create a real request to plant a tree. 
+5. 🌱 Verify the number of trees planted in the dashboard development statistics. After a successful run add the API key to the GitHub secrets of your project our organizations as `raaskey`. Trigger the Action again and finally create a real request to plant a tree. 
 
 To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
