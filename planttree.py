@@ -41,7 +41,7 @@ def main():
 
     # create a simple human readable response message
     if r.status_code == requests.codes.ok:
-        message = (
+        print(
             "Request successful\n"
             + str(response["user"])
             + " planted "
@@ -53,11 +53,9 @@ def main():
             + ".html"
         )
     else:
-        message = "Something went wrong. \n Your error code is: " + str(r.status_code)
-
-    # return a simple human readable status message
-    print(f"::set-output name=status::{message}")
-
+        print("Something went wrong. \n Your error code is: " + str(r.status_code))
+        os._exit(1)
+    
     # return the dict to the CI script for following data processing
     print(f"::set-output name=response::{response}")
 
