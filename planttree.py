@@ -55,7 +55,7 @@ def main():
     else:
         print("Something went wrong. \n Your error code is: " + str(r.status_code))
         os._exit(1)
-    
+
     # return the dict to the CI script for following data processing
     print(f"::set-output name=response::{response}")
 
