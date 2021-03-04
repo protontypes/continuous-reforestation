@@ -46,8 +46,8 @@ def main():
             + str(response["user"])
             + " planted "
             + str(response["treeCount"])
-            + " tree(s)."
-            + "Find more information on dashboard:"
+            + " tree(s). "
+            + "Find more information on dashboard: "
             + "https://digitalhumani.com/dashboard/"
             + str(enterprise_id)
             + ".html"
