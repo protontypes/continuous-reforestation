@@ -13,7 +13,7 @@ Plant trees on ...
 * the very first contribution to an open source project.
 * a new release, a milestone, or a closed issue.
 * a scheduled event (i.e. once per week).
-* to compensate the carbon footprint when deploying digital product.
+* to compensate the carbon footprint of your digital products.
 
 See more possible trigger events [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
 
