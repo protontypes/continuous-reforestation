@@ -21,7 +21,7 @@ See more possible trigger events [here](https://docs.github.com/en/actions/refer
 
 1. 🏁 To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact). You also receive the API key value corresponding for your enterprise ID. This is your secret authentication key. **Do not post it directly to your integration.yml file**.
 
-2. ✂️C Copy the example worflow to `<your_git_repository>/.github/workflow/integration.yaml` and change the variables in the workflow to your data. Set the `production` variable to `false` to test your implementation within the sandboxed development API. Push your script to GitHub and check the GitHub Action tab of your project. If you use GitHub Action for the first time, activate it when prompted.
+2. ✂️ Copy the example worflow to `<your_git_repository>/.github/workflow/integration.yaml` and change the variables in the workflow to your data. Set the `production` variable to `false` to test your implementation within the sandboxed development API. Push your script to GitHub and check the GitHub Action tab of your project. If you use GitHub Action for the first time, activate it when prompted.
 
 3. 📈 An open dashboard is provided to ensure a high level of transparency. This is currently under development and will show additional details. For this purpose visit:
 ``
@@ -34,7 +34,7 @@ https://digitalhumani.com/dashboard/<enterpriseid>
 
 To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
-### Example workflow
+### Example workflows
 
 ```yaml
 name: Plant a tree on a successful merged pull request to your main branch
