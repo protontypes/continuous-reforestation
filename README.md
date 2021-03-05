@@ -65,6 +65,33 @@ jobs:
         run: |
             echo "${{ steps.planttree.outputs.response }}"
 ```
+
+```yaml
+name: Plant a tree on every push to main
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Plant a Tree
+        id: planttree
+        uses: protontypes/continuous-reforestation@main
+        with:
+        # Enter your API variables below
+            apikey: ${{ secrets.raaskey }}
+            enterpriseid: "<your_enterprice_ID"
+            user: ${{ github.actor }}
+            treecount: 1
+            projectid: "14442771" # This projectid can be used to have your trees planted where they are needed the most, so this is a great ID to use by default when making the API call. 
+            production: "true"
+
+      - name: Response of digitalhumani.com RaaS API
+        run: |
+            echo "${{ steps.planttree.outputs.response }}"
+```
 ---
 ### Inputs
 
