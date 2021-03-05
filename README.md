@@ -21,14 +21,14 @@ See more possible trigger events [here](https://docs.github.com/en/actions/refer
 
 1. 🏁 To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact). You also receive the API key value corresponding for your enterprise ID. This is your secret authentication key. **Do not post it directly to your integration.yml file**.
 
-2. ✔️ Copy the example worflow to `<your_git_repository>/.github/workflow/integration.yaml` and change the variables in the workflow to your data. Set the `production` variable to `false` to test your implementation within the sandboxed development API. Push your script to GitHub and check the GitHub Action tab of your project. If you use GitHub Action for the first time, activate it when prompted.
+2. ✂️C Copy the example worflow to `<your_git_repository>/.github/workflow/integration.yaml` and change the variables in the workflow to your data. Set the `production` variable to `false` to test your implementation within the sandboxed development API. Push your script to GitHub and check the GitHub Action tab of your project. If you use GitHub Action for the first time, activate it when prompted.
 
 3. 📈 An open dashboard is provided to ensure a high level of transparency. This is currently under development and will show additional details. For this purpose visit:
 ``
 https://digitalhumani.com/dashboard/<enterpriseid>
 ``
 
-4. 🗝️ Add your authentication key as a secret in your repository `Settings` -> `Secrets` -> `New Repository Secret`: Name: `RAASKEY`, Value: `<your API key>`.
+4. 🗝️ Add your authentication key as a secret in your repository `Settings` -> `Secrets` -> `New Repository Secret`: Name: `RAASKEY`, Value: `<your API key>`. You can also add it as an organization wide secret in the setting of your organization.
 
 5. 🌱 Verify the number of trees planted in the dashboard development statistics. Set the `production` variable to `true` and push this commit. You now have left the development environment and started planting trees. From now on every configured trigger will continuously request to plant trees. At the end of each month you will be asked to confirm your requested amount of trees.
 
@@ -37,25 +37,28 @@ To see a list of all supported reforestation projects and more details on the Ra
 ### Example workflow
 
 ```yaml
-name: Integration Example
-on:
-  push:
+name: Plant a tree on a successful merged pull request to your main branch
+on: 
+  pull_request_target:
     branches:
       - main
+    types:
+      - closed
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Plant a Tree
+        if: github.event.pull_request.merged == true
         id: planttree
         uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
             apikey: ${{ secrets.raaskey }}
-            enterpriseid: "cd7cedcd"
+            enterpriseid: "<your_enterprice_ID>"
             user: ${{ github.actor }}
-            treecount: 10
-            projectid: "14442771" #  This project ID can be used to have your trees planted where they are needed the most, so this is a great ID to use by default when making the API call.
+            treecount: 1
+            projectid: "14442771" # This projectid can be used to have your trees planted where they are needed the most.
             production: "true"
 
       - name: Response of digitalhumani.com RaaS API
@@ -63,7 +66,6 @@ jobs:
             echo "${{ steps.planttree.outputs.response }}"
 ```
 ---
-
 ### Inputs
 
 | Input            | Description                           |
