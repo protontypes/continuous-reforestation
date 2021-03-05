@@ -97,10 +97,11 @@ jobs:
 
 | Input            | Description                           |
 |------------------|---------------------------------------|
+| `apikey`         | Your API secret key to the digitalhumani.com RaaS API. |
 | `enterpriseid`   | ID of your enterprise.                |
 | `user`           | End user by whom the trees were planted. Default is your GitHub user name. |
 | `projectid`      | ID of the reforestation project for where you want the trees to be planted.    |
-| `treeCount`      | Number of trees requested to plant per API call as integer. Every tree will create costs of $1 per tree. |
+| `treecount`      | Number of trees requested to plant per API call as integer. Every tree will create costs of $1 per tree. |
 | `production`     | Set `true` for the production API or false for the development API. |
 
 ### Outputs
