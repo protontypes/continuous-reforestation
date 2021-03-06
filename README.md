@@ -55,7 +55,7 @@ jobs:
         with:
         # Enter your API variables below
             apikey: ${{ secrets.raaskey }}
-            enterpriseid: "<your_enterprice_ID>"
+            enterpriseid: "<your_enterprise_ID>"
             user: ${{ github.actor }}
             treecount: 1
             projectid: "14442771" # This projectid can be used to have your trees planted where they are needed the most.
@@ -82,7 +82,7 @@ jobs:
         with:
         # Enter your API variables below
             apikey: ${{ secrets.raaskey }}
-            enterpriseid: "<your_enterprice_ID"
+            enterpriseid: "<your_enterprise_ID"
             user: ${{ github.actor }}
             treecount: 1
             projectid: "14442771" # This projectid can be used to have your trees planted where they are needed the most, so this is a great ID to use by default when making the API call. 
