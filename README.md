@@ -1,4 +1,5 @@
 # Continuous Reforestation
+**Plant trees within your workflow automation.**
 
 [<img src="logo.svg" align="right" width="250">](https://github.com/protontypes/continuous-reforestation)
 A GitHub Action for planting trees within your development workflow using the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/). Planting trees is an easy way to make a difference in the fight against climate change. Every tree helps to bind CO2 as long as it grows and creates living space for wildlife. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the RaaS API, you or your project can plant trees in a transparent way by exposing the API calls and related statistics. <br>  <br>
@@ -13,13 +14,13 @@ Plant trees on ...
 * the very first contribution to an open source project.
 * a new release, a milestone, or a closed issue.
 * a scheduled event (i.e. once per week).
-* to compensate the carbon footprint of your digital products.
+* the carbon footprint of your digital products after deployment.
 
 See more possible trigger events [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows).
 
 ## Usage
 
-1. 🏁 To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact). You also receive the API key value corresponding for your enterprise ID. This is your secret authentication key. **Do not post it directly to your integration.yml file**.
+1. 🏁 To get started, you need an account with DigitalHumani RaaS. Since they are currently in the early stages, you have to contact them to get an account. Send them an email [here](https://digitalhumani.com/#contact). You also receive the API key value corresponding for your enterprise ID. This is your secret authentication key. **Do not add your API key to your workfile yaml file**.
 
 2. ✂️ Copy the example worflow to `<your_git_repository>/.github/workflow/integration.yaml` and change the variables in the workflow to your data. Set the `production` variable to `false` to test your implementation within the sandboxed development API. Push your script to GitHub and check the GitHub Action tab of your project. If you use GitHub Action for the first time, activate it when prompted.
 
