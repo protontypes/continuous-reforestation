@@ -4,10 +4,11 @@ import requests
 from urllib.parse import urljoin
 import posixpath
 import json
+import sys
 
 
 def main():
-    # Variables set by the integration.yml script
+    # Variables set by the CI script
     enterprise_id = os.environ["INPUT_ENTERPRISEID"]
     project_id = os.environ["INPUT_PROJECTID"]
     user = os.environ["INPUT_USER"]
@@ -22,35 +23,41 @@ def main():
         "projectId": project_id,
         "user": user,
     }
+    headers = {"x-api-key": api_key}
 
-    # Using the sanbox API does not require any API key
+    # Check of we run in development or production mode
+    # Using the sandbox API does not require any API key
     if production == "true":
         print("Using production API")
         url = "https://api.digitalhumani.com/tree"
     else:
         print("Using sandbox API for development")
         url = "https://api-dev.digitalhumani.com/tree"
-    headers = {"x-api-key": api_key}
+
     # run the RaaS request
     r = requests.post(url, json=body_para, headers=headers)
 
-    # put the response int a dictionary for easier handling later
+    # put the response int a dictionary
     response = json.loads(r.text)
 
-    # "later" handling
-    message = ""
+    # create a simple human readable response message
     if r.status_code == requests.codes.ok:
-        message = (
+        print(
             "Request successful\n"
             + str(response["user"])
             + " planted "
             + str(response["treeCount"])
-            + " tree(s)."
+            + " tree(s). "
+            + "Find more information on dashboard: "
+            + "https://digitalhumani.com/dashboard/"
+            + str(enterprise_id)
+            + ".html"
         )
     else:
-        message = "Something went wrong. \n Your error code is: " + str(r.status_code)
+        print("Something went wrong. \n Your error code is: " + str(r.status_code))
+        sys.exit(1)
 
-    print(f"::set-output name=status::{message}")
+    # return the dict to the CI script for following data processing
     print(f"::set-output name=response::{response}")
 
 
