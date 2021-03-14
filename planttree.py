@@ -61,7 +61,8 @@ def main():
             + "https://digitalhumani.com/dashboard/"
             + str(enterprise_id)
             + ".html\n"
-            + plantedTrees + " were now planted by this entreprise."
+            + plantedTrees
+            + " were now planted in total."
         )
     else:
         print("Something went wrong. \n Your error code is: " + str(r.status_code))
