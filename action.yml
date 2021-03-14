@@ -26,6 +26,8 @@ inputs:
 outputs:
   response:
     description: "JSON response of the RaaS API"
+  plantedTrees:
+    description: "Number of trees planted by the enterprise."
 runs:
   using: "docker"
   image: "Dockerfile"

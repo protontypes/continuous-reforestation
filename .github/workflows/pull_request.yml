@@ -12,7 +12,7 @@ jobs:
       - name: Plant a Tree
         if: github.event.pull_request.merged == true
         id: planttree
-        uses: protontypes/continuous-reforestation@main
+        uses: tjarkdoering/continuous-reforestation@main
         with:
         # Enter your API variables below
             apikey: ${{ secrets.raaskey }}
@@ -25,3 +25,4 @@ jobs:
       - name: Response of digitalhumani.com RaaS API
         run: |
             echo "${{ steps.planttree.outputs.response }}"
+            echo "${{ steps.planttree.outputs.numbertrees }}"
