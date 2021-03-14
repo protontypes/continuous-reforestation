@@ -46,6 +46,7 @@ def main():
     response = json.loads(r.text)
     response_alltrees = json.loads(r_numtrees.text)
     respall = str(response_alltrees)
+    print(response_alltrees)
     num_alltrees = re.findall('[0-9]+',response_alltrees)
     plantedTrees = num_alltrees[0]
 
