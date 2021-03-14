@@ -25,4 +25,4 @@ jobs:
       - name: Response of digitalhumani.com RaaS API
         run: |
             echo "${{ steps.planttree.outputs.response }}"
-            echo "${{ steps.planttree.outputs.numbertrees }}"
+            echo "${{ steps.planttree.outputs.plantedTrees }}"
