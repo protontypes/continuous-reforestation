@@ -22,13 +22,3 @@ jobs:
       - name: Response of digitalhumani.com RaaS API
         run: |
             echo "${{ steps.planttree.outputs.response }}"
-            echo "${{ steps.planttree.outputs.plantedTrees }}"
-
-      - name: Create a badge with the number of trees planted
-            uses: RubbaBoy/BYOB@v1.2.0
-            with:
-                NAME: treebadge
-                LABEL: 'Trees planted:'
-                STATUS: ${{ steps.planttree.outputs.plantedTrees }}
-                COLOR: 40bc42
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
