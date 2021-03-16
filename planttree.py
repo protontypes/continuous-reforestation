@@ -7,6 +7,7 @@ import json
 import sys
 import re
 
+
 def main():
     # Variables set by the CI script
     enterprise_id = os.environ["INPUT_ENTERPRISEID"]
@@ -30,23 +31,30 @@ def main():
     if production == "true":
         print("Using production API")
         url = "https://api.digitalhumani.com/tree"
-        url_numtrees = 'https://api.digitalhumani.com/enterprise/'+enterprise_id+'/treeCount?startDate=2010-03-01&endDate=2030-01-01'
+        url_numtrees = (
+            "https://api.digitalhumani.com/enterprise/"
+            + enterprise_id
+            + "/treeCount?startDate=2010-03-01&endDate=2030-01-01"
+        )
 
     else:
         print("Using sandbox API for development")
         url = "https://api-dev.digitalhumani.com/tree"
-        url_numtrees = 'https://api-dev.digitalhumani.com/enterprise/'+enterprise_id+'/treeCount?startDate=2010-03-01&endDate=2030-01-01'
+        url_numtrees = (
+            "https://api-dev.digitalhumani.com/enterprise/"
+            + enterprise_id
+            + "/treeCount?startDate=2010-03-01&endDate=2030-01-01"
+        )
 
     # run the RaaS requests for planting trees and getting tree count
     r = requests.post(url, json=body_para, headers=headers)
     r_numtrees = requests.get(url_numtrees, headers=headers)
 
-    
     # put the response into a dictionary
     response = json.loads(r.text)
     response_alltrees = json.loads(r_numtrees.text)
     response_alltrees = str(response_alltrees)
-    num_alltrees = re.findall('[0-9]+',response_alltrees)
+    num_alltrees = re.findall("[0-9]+", response_alltrees)
     plantedTrees = num_alltrees[0]
 
     # create a simple human readable response message
