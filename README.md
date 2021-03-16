@@ -35,7 +35,15 @@ https://digitalhumani.com/dashboard/<enterpriseid>
 
 To see a list of all supported reforestation projects and more details on the RaaS API read the [documentation of DigitalHumani](https://digitalhumani.com/docs/#appendixlist-of-projects).
 
-**Disclaimer:** Even though this workflow automates the request to plant trees, the planting process itself remains manual labour by the reforestation organisations. They are also the people who write your invoice. Due to the amount of work it requires to write these invoices, DigitalHumani accumulates your plant requests until you reach 50 trees, before issuing the order. If you plant less than 50 trees per month, you will not receive a monthly invoice. If you plant more, don't mind this disclaimer.
+**Disclaimer:** Even though this workflow automates the request to plant trees, the planting process itself remains manual labour by the reforestation organisations. They are also the people who write your invoice. Due to the amount of work it requires to write these invoices, DigitalHumani accumulates your plant requests until you reach a certain number, depending on your chosen reforestation project, before issuing the order. Below are the least required amounts to receive an invoice and actually plant trees. If you plant more, don't mind this disclaimer.
+
+| Reforestation project | Necessary number of requested trees |
+| --------------------- | ----------------------------------- |
+| Chase Africa | 20 |
+| TIST | 20 | 
+| Sustainable Harvest International | 50 |
+| Conserve Natural Forests | 20 |
+| OneTreePlanted | 50 |
 
 ### Example workflows
 
