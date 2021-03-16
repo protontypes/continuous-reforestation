@@ -5,6 +5,7 @@ from urllib.parse import urljoin
 import posixpath
 import json
 import sys
+import re
 
 
 def main():
@@ -30,15 +31,31 @@ def main():
     if production == "true":
         print("Using production API")
         url = "https://api.digitalhumani.com/tree"
+        url_numtrees = (
+            "https://api.digitalhumani.com/enterprise/"
+            + enterprise_id
+            + "/treeCount?startDate=2010-03-01&endDate=2030-01-01"
+        )
+
     else:
         print("Using sandbox API for development")
         url = "https://api-dev.digitalhumani.com/tree"
+        url_numtrees = (
+            "https://api-dev.digitalhumani.com/enterprise/"
+            + enterprise_id
+            + "/treeCount?startDate=2010-03-01&endDate=2030-01-01"
+        )
 
-    # run the RaaS request
+    # run the RaaS requests for planting trees and getting tree count
     r = requests.post(url, json=body_para, headers=headers)
+    r_numtrees = requests.get(url_numtrees, headers=headers)
 
-    # put the response int a dictionary
+    # put the response into a dictionary
     response = json.loads(r.text)
+    response_alltrees = json.loads(r_numtrees.text)
+    response_alltrees = str(response_alltrees)
+    num_alltrees = re.findall("[0-9]+", response_alltrees)
+    plantedTrees = num_alltrees[0]
 
     # create a simple human readable response message
     if r.status_code == requests.codes.ok:
@@ -51,7 +68,9 @@ def main():
             + "Find more information on dashboard: "
             + "https://digitalhumani.com/dashboard/"
             + str(enterprise_id)
-            + ".html"
+            + ".html\n"
+            + plantedTrees
+            + " were now planted in total."
         )
     else:
         print("Something went wrong. \n Your error code is: " + str(r.status_code))
@@ -59,6 +78,7 @@ def main():
 
     # return the dict to the CI script for following data processing
     print(f"::set-output name=response::{response}")
+    print(f"::set-output name=response::{plantedTrees}")
 
 
 if __name__ == "__main__":

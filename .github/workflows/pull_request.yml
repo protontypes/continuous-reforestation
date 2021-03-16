@@ -20,8 +20,9 @@ jobs:
             user: ${{ github.actor }}
             treecount: 5
             projectid: "14442771" # This projectid can be used to have your trees planted where they are needed the most.
-            production: "true"
+            production: "false"
 
       - name: Response of digitalhumani.com RaaS API
         run: |
             echo "${{ steps.planttree.outputs.response }}"
+            echo "${{ steps.planttree.outputs.plantedTrees }}"
