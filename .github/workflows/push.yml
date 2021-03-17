@@ -4,11 +4,11 @@ on:
     branches:
       - main
 jobs:
-  build:
+  plantrees:
     runs-on: ubuntu-latest
     steps:
       - name: Plant a Tree
-        id: planttree
+        id: planttrees
         uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
@@ -21,17 +21,5 @@ jobs:
 
       - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.planttree.outputs.response }}"
-            echo "${{ steps.planttree.outputs.plantedTrees }}"
-  
-      - name: Badge
-        uses: RubbaBoy/BYOB@v1.2.0
-        with:
-          NAME: trees
-          LABEL: 'Planted Trees'
-          STATUS: ${{ steps.planttree.outputs.plantedTrees }}
-          COLOR: 009485
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
-            
-            
-            
+            echo "${{ steps.planttrees.outputs.response }}"
+            echo "${{ steps.planttrees.outputs.plantedTrees }}"
