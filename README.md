@@ -56,12 +56,12 @@ on:
     types:
       - closed
 jobs:
-  build:
+  planttrees:
     runs-on: ubuntu-latest
     steps:
       - name: Plant a Tree
         if: github.event.pull_request.merged == true
-        id: planttree
+        id: planttrees
         uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
@@ -74,7 +74,7 @@ jobs:
 
       - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.planttree.outputs.response }}"
+            echo "${{ steps.planttrees.outputs.response }}"
 ```
 
 ```yaml
@@ -84,11 +84,11 @@ on:
     branches:
       - main
 jobs:
-  build:
+  planttrees:
     runs-on: ubuntu-latest
     steps:
       - name: Plant a Tree
-        id: planttree
+        id: planttrees
         uses: protontypes/continuous-reforestation@main
         with:
         # Enter your API variables below
@@ -101,7 +101,7 @@ jobs:
 
       - name: Response of digitalhumani.com RaaS API
         run: |
-            echo "${{ steps.planttree.outputs.response }}"
+            echo "${{ steps.planttrees.outputs.response }}"
 ```
 ---
 ### Inputs
