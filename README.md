@@ -40,10 +40,10 @@ To see a list of all supported reforestation projects and more details on the Ra
 | Reforestation project | Necessary number of requested trees |
 | --------------------- | ----------------------------------- |
 | Chase Africa | 20 |
-| TIST | 20 | 
-| Sustainable Harvest International | 50 |
 | Conserve Natural Forests | 20 |
-| OneTreePlanted | 50 |
+| OneTreePlanted | 1 |
+| Sustainable Harvest International | 50 |
+| TIST | 20 | 
 
 ### Example workflows
 
