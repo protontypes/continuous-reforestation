@@ -23,3 +23,15 @@ jobs:
         run: |
             echo "${{ steps.planttree.outputs.response }}"
             echo "${{ steps.planttree.outputs.plantedTrees }}"
+  
+      - name: Planted tree badge
+        uses: RubbaBoy/BYOB@v1.2.0
+        with:
+          NAME: time
+          LABEL: 'Planted Trees'
+          STATUS: ${{ steps.planttree.outputs.plantedTrees }}
+          COLOR: 009485
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+            
+            
+            
