@@ -1,10 +1,10 @@
 # Continuous Reforestation
-**Make tree planting a part of your daily workflow. :deciduous_tree: Find more information on this project read our [blog post](https://protontypes.eu/blog/2021/03/25/continuous-reforestation/).** 
+**Make tree planting a part of your daily workflow. :deciduous_tree:** 
 
 [<img src="logo.svg" align="right" width="250">](https://github.com/protontypes/continuous-reforestation)
 A GitHub Action for planting trees within your development workflow using the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/). 
 
-Planting trees is an easy way to make a difference in the fight against climate change. Every tree helps to bind CO2 as long as it grows and creates living space for wildlife. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the RaaS API, you or your project can plant trees in a transparent way by exposing the API calls and related statistics. The RaaS API is completely free of charge. You only pay for the trees (1 $ each) directly to the reforestation organization. <br>  <br>
+Planting trees is an easy way to make a difference in the fight against climate change. Every tree helps to bind CO2 as long as it grows and creates living space for wildlife. Automating the process gives you total control of where, when and how much you want to contribute while saving you the fuss of doing the whole process manually. By using the RaaS API, you or your project can plant trees in a transparent way by exposing the API calls and related statistics. The RaaS API is completely free of charge. You only pay for the trees (1 $ each) directly to the reforestation organization. Find more information on this project read our [blog post](https://protontypes.eu/blog/2021/03/25/continuous-reforestation/). <br>  <br>
 [![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Lint/badge.svg)](https://github.com/jacobtomlinson/protontypes/continuous-reforestation/actions)
 [![Actions Status](https://github.com/protontypes/continuous-reforestation/workflows/Integration%20Test/badge.svg)](https://github.com/protontypes/continuous-reforestation/actions)
 [![](https://badgen.net/badge/icon/Community%20Chat/green?icon=gitter&label)](https://gitter.im/protontypes/community)
