@@ -1,5 +1,5 @@
 # Continuous Reforestation
-**Make tree planting a part of your daily workflow. :deciduous_tree:**
+**Make tree planting a part of your daily workflow. :deciduous_tree: Find more information on this project read our [blog post](https://protontypes.eu/blog/2021/03/25/continuous-reforestation/).** 
 
 [<img src="logo.svg" align="right" width="250">](https://github.com/protontypes/continuous-reforestation)
 A GitHub Action for planting trees within your development workflow using the Reforestation as a Service (RaaS) API developed by [DigitalHumani](https://digitalhumani.com/). 
